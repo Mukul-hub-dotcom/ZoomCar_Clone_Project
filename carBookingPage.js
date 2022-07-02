@@ -110,15 +110,32 @@ fetch(`https://api.zoomcar.com/v5/bookings/checkout?platform=web&version=2&devic
     document.querySelector('.car-checkout-main').addEventListener('scroll', function dada(){
 
       var carheaddiv = document.createElement('div');
+      var carheadimg = document.createElement('img');
+      carheadimg.addEventListener('click', ()=>{
+        window.location.href = 'index.html'
+      })
+      carheadimg.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIBdVvxLNiQhr5w2yZ7C8lZf_KiT9nh6yyMQ&usqp=CAU';
+      carheadimg.style.width = '30px'
+      carheadimg.style.height = '30px'
+      carheadimg.style.margin = '10px 0 0 10px'
+
       carheaddiv.classList = 'carheaddiv';
+      document.querySelector('.car-checkout-nav').style.backgroundColor = 'black';
+      document.querySelector('.car-checkout-nav').style.color = 'white';
+
       var carheadh4 = document.createElement('h4');
       carheadh4.innerText = carnameh3.innerText;
       var carheadp1 = document.createElement('p');
-      carheadp1.innerText = "🔵" + date1 +" 🔴" + date2;
+      // carheadp1.innerText = data1;
+      carheadp1.innerHTML = ` <p> ${date1}<img style="width: 20px; margin:0px 10px -5px 10px; border-radius: 30px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvIU3DEKdxMuAjfiA_nWIN4uAa8MdUnAIuqw&usqp=CAU" alt=""> ${date2}
+      </p>`
+      // carheadp1.innerText = data2;
+      carheadp1.style.marginLeft = '0px'
       // var carheadp2 = document.createElement('p');
       // carheadp2.innerText = "🔴" + date2;
       carheaddiv.append(carheadh4, carheadp1);
-      document.querySelector('.car-checkout-nav').append(carheaddiv);
+      document.querySelector('.car-checkout-nav').append(carheadimg, carheaddiv);
+      document.querySelector('.car-checkout-nav').style.display = 'flex';
       console.log(carnameh3.innerText)
       document.querySelector('.car-checkout-main').removeEventListener("scroll", dada, false)
     });
@@ -313,6 +330,8 @@ var carsummarydiv11 = document.createElement('div');
 var carsummaryh1 = document.createElement('h1');
 carsummarydiv11.append(carsummaryh1);
 carsummaryh1.innerText = data.amount.final_amount;
+var obj = {amount: data.amount.final_amount}
+localStorage.setItem('amount', JSON.stringify(obj));
 var carsummarydiv12 = document.createElement('div');
 var carsummarycoupon = document.createElement('div');
 carsummarycoupon.innerText =  data.trip_details.car.car_name;
@@ -324,57 +343,12 @@ carsummarydiv2.innerText = "CHECKOUT SUMMARY";
 carsummarydiv2.classList = 'carsummarydiv2';
 carsummarydiv.append(carsummarydiv1, carsummarydiv2);
 document.querySelector('.car-checkout-footer').append(carsummarydiv);
+carsummarydiv2.addEventListener('click', ()=>{
+  window.location.href = 'carPayment.html'
+})
 
 
 });
 
 console.log("Yes Final");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// fetch("https://api.zoomcar.com/v5/bookings/checkout?platform=web&version=2&device_id=000&device_name=000&country_code=IND&locale=en&city=bhopal", {
-//   "headers": {
-//     "accept": "*/*",
-//     "accept-language": "en-US,en;q=0.9",
-//     "auth-token": "as5QZXLrW39JZxCDAHgL",
-//     "content-type": "application/json",
-//     "sec-ch-ua": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\"",
-//     "sec-ch-ua-mobile": "?0",
-//     "sec-ch-ua-platform": "\"Windows\"",
-//     "sec-fetch-dest": "empty",
-//     "sec-fetch-mode": "cors",
-//     "sec-fetch-site": "same-site"
-//   },
-//   "referrer": "https://www.zoomcar.com/",
-//   "referrerPolicy": "strict-origin-when-cross-origin",
-//   "body":`{\"booking_params\":{\"car_id\":${carBookingData.car_id},\"cargroup_id\":${carBookingData.cargroup_id},\"pricing_id\":\"${carBookingData.pricing_id}\",\"search_experiments\":[\"UNLIMITED_KMS\",\"FOMO_MESSAGE\",\"STRIKETHROUGH\"],\"lat\":\"23.2599333\",\"lng\":\"77.412615\",\"city\":\"bhopal\",\"location_id\":\"${carBookingData.location_id}\",\"starts\":1656817200000,\"ends\":1656846000000,\"addon_params\":{},\"searched_address\":\"${carBookingData.search_addr}\",\"first_call\":true}}`,
-//   "method": "POST",
-//   "mode": "cors",
-//   "credentials": "omit"
-// }).then(res => res.json()).then(data => console.log(data));
-
-
 

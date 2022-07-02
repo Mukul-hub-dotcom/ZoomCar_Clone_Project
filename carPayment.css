@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.pay{
+    width: 100%;
+}
+.car-payment-nav{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    color: white;
+    height: 80px;
+}
+
+.imgnav{
+    width: 30px; 
+    height:30px;
+    margin: 16px;
+}
+.car-payment-text{
+    margin-top: 15px;
+}
+.car-payment-text h3, .car-payment-text p{
+    font-size: 20px;
+    margin: 0;
+    padding: -10px;
+}
+.car-payment-text p{
+    font-size: 17px;
+
+}
+
+.car-payment-main{
+    margin-top: 140px;
+    width: 40%;
+    margin: 30px auto;
+}
+.car-payment-main img{
+    width: 40px;
+    height: 40px;
+    margin: 7px;
+}
+.car-cards{
+    display: flex;
+}
+.car-card-name h3, .car-card-name p{
+    
+    margin: 7px 16px;
+    padding: 0;
+}
+.car-card-name p{
+    color: gray;
+}
+hr{
+    border: .1px solid rgb(213, 213, 213);
+    margin-bottom: 20px;
+}
+
+
+.caratmcontainer{
+    float:right;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.caratmbox{
+    width: 40%;
+    margin: auto;
+    height: 48vh;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow:  10px 10px 120px 20px white; 
+}
+.caratmbox1{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 3px;
+    padding: 10px;
+}
+.caratmdetails h5{
+    margin: 0px;
+    margin-left: -60px;
+    color: gray;
+}
+.caratmbox1 img{
+    margin-top: 8px;
+    width: 40px;
+}
+
+.caratmbox2{
+    width: 94%;
+    margin: auto;  
+}
+.caratmbox2 input{
+    width: 95%;
+    padding: 15px;
+    font-size: large;
+    /* border: 1px solid green; */
+    margin: 40px auto;  
+}
+
+.caratmbox3{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    justify-content: space-between;
+}
+.caratmbox3 input{
+    width: 43%;
+    font-size: 16px;
+    padding: 15px;
+}
+.caratmbox button{
+    width: 95%;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    margin-top: 40px;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+}
